@@ -31,12 +31,3 @@ Route::get('/courses/{course}/topics', function (Course $course, Request $reques
 });
 
 
-Route::post('/courses/{course}/topics', function (Course $course, Request $request){
-
-    $course->topics()->attach($request->topic_id);
-    
-})->name('courses.topics.store');
-
-Route::get('/posts', PostIndexController::class);
-Route::post('/posts', PostStoreController::class);
-Route::delete('/posts/{post}', PostDestroyController::class);
